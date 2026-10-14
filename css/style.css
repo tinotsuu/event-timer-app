@@ -1,0 +1,49 @@
+:root{--bg:#101418;--card:#1b2229;--line:#2c3742;--tx:#f4f1ea;--mut:#9aa7b2;--acc:#2ee59d;--accd:#06261a}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--tx);font-family:"Avenir Next","Trebuchet MS",system-ui,sans-serif;overscroll-behavior:none;-webkit-user-select:none;user-select:none}
+button{font:inherit;color:inherit;border:0;border-radius:14px;background:#2a343e;min-height:56px;padding:0 20px;font-weight:700;font-size:20px;cursor:pointer}
+button:active{transform:scale(.96)}
+input{font:inherit;color:var(--tx);background:#0d1115;border:2px solid var(--line);border-radius:12px;min-height:56px;padding:0 14px;font-size:22px;width:100%;-webkit-user-select:text;user-select:text}
+input:focus{outline:none;border-color:var(--acc)}
+.hidden{display:none!important}
+/* SETUP */
+#setup{height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:max(20px,env(safe-area-inset-top)) 28px 140px}
+.wrap{max-width:900px;margin:0 auto}
+h1{font-size:34px;margin:8px 0 4px}
+.sub{color:var(--mut);font-size:18px;margin:0 0 22px}
+.card{background:var(--card);border-radius:20px;padding:20px;margin-bottom:18px;display:grid;grid-template-columns:48px 1fr;gap:14px}
+.num{width:48px;height:48px;border-radius:50%;background:var(--acc);color:var(--accd);display:grid;place-items:center;font-size:24px;font-weight:800}
+.f{margin-bottom:14px}.f label{display:block;color:var(--mut);font-size:16px;margin-bottom:6px}
+.dur{display:flex;gap:18px;flex-wrap:wrap}
+.st{display:flex;align-items:center;gap:8px}
+.st button{width:56px;padding:0;font-size:30px}
+.st input{width:92px;text-align:center;font-size:30px;font-weight:800}
+.st span{color:var(--mut);font-size:18px}
+.chips{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.chips button{min-height:46px;font-size:18px;background:#22303b}
+.act{display:flex;gap:10px;justify-content:flex-end}
+.act .del{background:#4a2326;color:#ffb4b4}
+.main{grid-column:1/-1}
+.bar{position:fixed;left:0;right:0;bottom:0;background:linear-gradient(transparent,var(--bg) 35%);padding:30px 28px max(20px,env(safe-area-inset-bottom))}
+.bar .wrap{display:flex;gap:14px}
+.bar button{flex:1;min-height:68px;font-size:24px}
+.go{background:var(--acc);color:var(--accd)}
+.tip{color:var(--mut);font-size:16px;line-height:1.5;margin:6px 0 0}
+/* RUN */
+#run{position:fixed;inset:0;display:flex;flex-direction:column;padding:max(16px,env(safe-area-inset-top)) 28px max(16px,env(safe-area-inset-bottom));background:#101418;color:#fff;transition:background .4s,color .4s}
+#run.warn{background:#f5b800;color:#111}
+#run.danger{background:#d9182b;color:#fff}
+#run.over{animation:blink 1s steps(1) infinite;color:#fff}
+@keyframes blink{0%{background:#d9182b}50%{background:#5c0a12}}
+@media(prefers-reduced-motion:reduce){#run.over{animation:none;background:#d9182b}}
+.top{display:flex;justify-content:space-between;font-size:24px;opacity:.75;font-weight:600}
+#title{font-size:min(8vw,9vh);font-weight:800;text-align:center;line-height:1.1;margin:1.5vh 0 0;overflow-wrap:anywhere}
+#time{flex:1;display:flex;align-items:center;justify-content:center;font-size:min(27vw,40vh);font-weight:800;font-variant-numeric:tabular-nums;font-feature-settings:"tnum";line-height:1;letter-spacing:-.02em;white-space:nowrap}
+#note{font-size:min(5vw,5.5vh);text-align:center;line-height:1.2;min-height:1.2em;margin-bottom:1.5vh;overflow-wrap:anywhere}
+.prog{height:14px;border-radius:7px;background:rgba(127,127,127,.35);overflow:hidden}
+#pb{height:100%;width:100%;background:currentColor;transition:width .25s linear}
+#next{text-align:center;font-size:22px;opacity:.75;margin:10px 0 6px;min-height:28px}
+#ctl{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding-top:6px}
+#ctl button{background:rgba(0,0,0,.38);color:#fff;min-height:64px;font-size:21px}
+#ctl .big{background:#fff;color:#111;min-width:190px;font-size:26px}
+#show{position:fixed;right:14px;bottom:max(10px,env(safe-area-inset-bottom));width:52px;min-height:52px;padding:0;opacity:.25;background:#000;color:#fff;font-size:22px}
